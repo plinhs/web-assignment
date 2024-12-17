@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= product.name %>
+    </title>
+    <link rel="stylesheet" href="/navbar.css">
+    <link rel="stylesheet" href="/product.css">
+
+</head>
+
+<body>
+    <%- include('navbar') %>
+
+        <div class="product-container">
+            <div class="product-details-container">
+                <div class="breadcrumbs">
+                    <% breadcrumbs.forEach((breadcrumb, index)=> { %>
+                        <a class="breadcrumb" href="<%= breadcrumb.url %>">
+                            <%= breadcrumb.name %>
+                        </a>
+                        <% if (index < breadcrumbs.length - 1) { %>
+                            <span class="arrow"> > </span>  
+                            <% } %>
+                                <% }) %>
+                </div>
+                <div class="product-details">
+                    <img src="<%= product.image_url %>" alt="" />
+                    <div class="product-details-text">
+                        <p class="product-details-name">
+                            <%= product.product_name %>
+                        </p>
+                        <p class="product-details-price">
+                            <%= product.price %>TL
+                        </p>
+                        <p class="product-details-desc">
+                            <%= product.description %>
+                        </p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+</body>
+
+</html>

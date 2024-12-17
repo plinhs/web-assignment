@@ -1,0 +1,25 @@
+{
+  "name": "my-express-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "devStart": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.11.5",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "nodeman": "^1.1.2",
+    "nodemon": "^3.1.7"
+  }
+}

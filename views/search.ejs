@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <link rel="stylesheet" href="navbar.css">
+    <link href="content.css" rel="stylesheet">
+
+</head>
+<body>
+    <%- include('navbar') %>
+    <div class="content-container">
+        <% if (products.length > 0) { %>
+            <div class="content-title-products-container">
+                <h2 class="content-title">"<%= query %>" aramanız için sonuçlar:</h2>
+                <div class="content-products-container">
+                    <% products.forEach(product=> { %>
+                        <div class="content-product">
+                            <img class="content-product-img" src="<%= product.image_url %>" alt="" />
+                            <a class="content-product-name" href="/product/<%= product.product_no %>/<%= product.product_name %>">
+                                    <%= product.product_name %>
+                                </a>
+                            <p class="content-product-price">
+                                <%= product.price %> TL
+                            </p>
+                            
+                        </div>
+                        <% }) %>
+                </div>
+            </div>
+        <% } else { %>
+            <p class="search-not-found">"<%= query %>" aramanız için sonuç bulunamadı.</p>
+        <% } %>
+    </div>
+</body>
+
+</html>
